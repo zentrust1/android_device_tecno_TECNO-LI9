@@ -1,0 +1,35 @@
+name: Transfer files from GitLab to GitHub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout GitHub repository
+      uses: actions/checkout@v2
+
+    - name: Checkout GitLab repository
+      uses: actions/checkout@v2
+      with:
+        repository: gitlab-org/your-gitlab-repo
+        token: ${{ secrets.GITLAB_TOKEN }}
+        ref: main
+
+    - name: Copy files from GitLab to GitHub
+      run: |
+        cp -r ./your-gitlab-repo-directory/* .
+
+    - name: Commit files to GitHub
+      run: |
+        git config --global user.name "Your Name"
+        git config --global user.email "your-email@example.com"
+        git add .
+        git commit -m "Transfer files from GitLab"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
