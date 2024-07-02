@@ -6,7 +6,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_TECNO-LI9.mk
+    $(LOCAL_DIR)/twrp_TECNO-LI9.mk
 
 COMMON_LUNCH_CHOICES := \
     omni_TECNO-LI9-user \
