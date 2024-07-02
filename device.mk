@@ -15,21 +15,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.2-mtkimpl \
+    android.hardware.boot@1.2-mtkimpl.recovery
 
 PRODUCT_PACKAGES += \
-    bootctrl.mt6833
+    bootctrl \
+    bootctrl.recovery \
+    libmtk_bsg
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6833 \
-    libgptutils \
-    libz \
-    libcutils
-
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
-    update_engine_sideload
+PRODUCT_PACKAGES_DEBUG += \
+    bootctrl
