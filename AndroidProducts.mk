@@ -9,6 +9,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_TECNO-LI9.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_TECNO-LI9-user \
-    omni_TECNO-LI9-userdebug \
-    omni_TECNO-LI9-eng
+    twrp_TECNO-LI9-user \
+    twrp_TECNO-LI9-userdebug \
+    twrp_TECNO-LI9-eng
